@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Daybook">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcf7ee"/>
+      <stop offset=".55" stop-color="#f2e8d8"/>
+      <stop offset="1" stop-color="#e6d7c1"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2d2720"/>
+      <stop offset="1" stop-color="#17130f"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#eaa77f" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#eaa77f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#4a3418" flood-opacity=".20"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <g transform="translate(256 256) scale(.8) translate(-256 -256)">
+    <circle cx="410" cy="96" r="158" fill="url(#halo)"/>
+    <rect x="110" y="110" width="292" height="292" rx="76" fill="url(#tile)" filter="url(#shadow)"/>
+    <rect x="110.75" y="110.75" width="290.5" height="290.5" rx="75.25" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.5"/>
+    <g transform="translate(149 149) scale(9)" fill="none" stroke="#f8f0e2" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15" rx="2.5"/>
+      <path d="M3.5 10h17M8 3.5v3M16 3.5v3"/>
+      <path d="M7.5 14h4M7.5 17h7" stroke="#e8946a"/>
+    </g>
+  </g>
+</svg>
