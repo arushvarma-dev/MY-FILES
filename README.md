@@ -2,17 +2,7 @@
 
 **A calm, paper-like notebook for your week.** Plan your timetable, protect what matters, and let the day tick itself off.
 
-<p align="center">
-  <img src="docs/preview.png" alt="Daybook week view on desktop — a warm paper timetable with priorities highlighted" width="100%">
-</p>
 
-<p align="center">
-  <a href="https://arushvarma.github.io/daybook/"><b>Open Daybook →</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/arushvarma/daybook/archive/refs/heads/main.zip">Download ZIP</a>
-  &nbsp;·&nbsp;
-  <a href="#install-it-as-an-app">Install as an app</a>
-</p>
 
 Daybook is a single-page app with no account, no server, and no build step. It opens like a notebook: a week spread, a page for each day, and a margin for what matters most. Everything you write stays in your browser.
 
@@ -28,12 +18,8 @@ Daybook is a single-page app with no account, no server, and no build step. It o
 - **Light & dark** — warm daylight paper, and a lamp-lit evening version.
 - **Yours to keep** — export/import as JSON. Data lives in `localStorage`; there is no tracking and no backend.
 
-<p align="center">
-  <img src="docs/preview-mobile.png" alt="Daybook day view on a phone" width="300">
-  &nbsp;&nbsp;
-  <img src="docs/preview-dark.png" alt="Daybook in dark mode" width="300">
-</p>
 
+  
 ## Install it as an app
 
 Daybook is a PWA, so it can live in your dock, taskbar, or home screen and work offline.
