@@ -1,118 +1,198 @@
-# Daybook
+Daybook
 
-**A calm, paper-like notebook for your week.** Plan your timetable, protect what matters, and let the day tick itself off.
+A personal productivity and timetable management web application.
 
+Daybook is a lightweight, browser-based notebook designed to help users organize their daily schedules, manage tasks, track progress and maintain personal notes.
 
+The application provides a simple and accessible interface for everyday planning, with local data storage and offline functionality.
 
-Daybook is a single-page app with no account, no server, and no build step. It opens like a notebook: a week spread, a page for each day, and a margin for what matters most. Everything you write stays in your browser.
+---
 
-## Why it feels good
+Features
 
-- **A real timetable** — a quiet weekly grid from early morning to late night. Click an empty slot to add something, or drag an entry to move it.
-- **★ Priorities that stand out** — pin the tasks that matter. They get a warm glow, a star on every view, and their own “Priority today” section in the margin.
-- **Gentle reminders** — 10 minutes before a pinned task, Daybook nudges you with an in-app card (and a browser notification when you allow it). No noise for everything else.
-- **A page per day** — a focused list with times, categories, notes, and a completion circle you can actually click.
-- **Daily check-offs** — every date has its own progress. Monday’s lecture can be done this week and waiting again next week.
-- **Notes that save themselves** — a lined note box for every date, saved as you type.
-- **A living background** — layered paper, warm light, soft drifting orbs, and a little grain. Not a plain white page.
-- **Light & dark** — warm daylight paper, and a lamp-lit evening version.
-- **Yours to keep** — export/import as JSON. Data lives in `localStorage`; there is no tracking and no backend.
+- Daily and weekly timetable management
+- Task creation, editing and deletion
+- Task completion tracking
+- Personal notes
+- Priority management
+- Light and dark themes
+- Drag-and-drop scheduling
+- Browser notifications
+- JSON data export and import
+- Offline support
 
+---
 
-  
-## Install it as an app
+Technology Stack
 
-Daybook is a PWA, so it can live in your dock, taskbar, or home screen and work offline.
+Technology| Purpose
+HTML5| Application structure
+CSS3| Styling and responsive design
+JavaScript| Application logic and interactivity
+LocalStorage| Persistent browser storage
+Service Worker| Offline functionality
+JSON| Data backup and restoration
 
-| Where | How |
-| --- | --- |
-| **Chrome / Edge (desktop)** | Open the [live app](https://arushvarma.github.io/daybook/), then click the install icon in the address bar — or the download button in Daybook’s toolbar. |
-| **iPhone / iPad** | Open the live app in Safari → **Share** → **Add to Home Screen**. |
-| **Android** | Open the live app in Chrome → **⋮** → **Install app** (or “Add to Home screen”). |
+---
 
-The live site needs a one-time GitHub Pages deploy (see [Publishing](#publishing-this-repo)). Until then, the app still runs perfectly by opening `index.html`.
+Architecture
 
-## Download and run it yourself
+Daybook follows a client-side application architecture.
 
-**Option 1 — download the ZIP**
+1. Frontend
 
-1. Click **Code → Download ZIP** on GitHub and unzip it.
-2. Open `index.html` in any modern browser.
-3. Optional: serve the folder locally so offline caching and installation work:
+The frontend is responsible for the application's user interface and functionality.
 
-```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
+- HTML: Defines the application structure, timetable, task forms and navigation.
+- CSS: Handles visual styling, responsive layouts, themes and animations.
+- JavaScript: Manages application state, user interactions, task operations and data rendering.
 
-**Option 2 — clone**
+2. Backend
 
-```bash
-git clone https://github.com/arushvarma/daybook.git
-cd daybook
-open index.html
-```
+Daybook currently does not implement a traditional backend server.
 
-No npm, no bundler, no dependencies.
+Application logic runs directly in the user's browser without requiring server-side processing or API requests for its core functionality.
 
-## Shortcuts
+3. Data Storage
 
-| Key | Action |
-| --- | --- |
-| `N` | New entry |
-| `T` | Jump to today |
-| `W` / `D` | Week / Day view |
-| `←` / `→` | Previous / next week or day |
-| `Esc` | Close the editor |
+Browser LocalStorage is used to persist application data.
 
-## How your data works
+It stores:
 
-- The timetable is a **weekly template**: editing “Deep work” on Monday changes every Monday. Check-offs and notes belong to the actual date.
-- State is stored in `localStorage` under `daybook.v1`.
-- A sample student week is seeded on first run so the notebook isn’t empty. Clear it with the trash button when you’re ready for your own.
-- Export a JSON backup before switching browsers or clearing site data.
-- Reminders are on by default. The bell in the toolbar turns them off/on; browser notifications are requested only when you enable them.
-- Reminders are checked while Daybook is open. It does not schedule push notifications while the app is closed.
+- Timetable entries
+- Task completion records
+- Personal notes
+- Application settings
 
-## Project structure
+4. Offline Functionality
 
-```text
-.
-├── index.html                  # the whole app — markup, styles, and logic
-├── manifest.webmanifest        # name, icons, colours for installation
-├── sw.js                       # offline cache
-├── icons/                      # app icons (SVG source + PNG exports)
-├── docs/                       # screenshots used by this README
-├── .github/workflows/pages.yml # deploy to GitHub Pages on every push
-└── LICENSE
-```
+A Service Worker supports offline functionality by allowing the application to use previously cached resources when network connectivity is unavailable.
 
-## AI-assisted development
+---
 
-Daybook was created with help from AI tools, which contributed to parts of the design and code. The project is being developed as a portfolio piece, and its author is responsible for reviewing, understanding, and maintaining the work they present.
+Application Data Flow
 
-## Publishing this repo
+Daybook follows a browser-based data flow.
 
-These are the one-time steps to put Daybook online:
+1. User Interaction: The user creates, edits or completes a task.
+2. Input Processing: JavaScript receives and processes the input.
+3. State Management: The application updates its internal state.
+4. Data Persistence: Application state is serialized into JSON and saved in LocalStorage.
+5. Interface Rendering: JavaScript updates the user interface.
+6. Data Restoration: When the application is reopened, previously stored data is loaded from LocalStorage.
 
-1. Create an empty **public** repository named `daybook` on GitHub (no README, no `.gitignore`).
-2. In the new repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-3. From this folder, push the project:
+This process allows users to maintain their schedules without requiring a backend database.
 
-```bash
-git branch -M main
-git remote add origin https://github.com/arushvarma/daybook.git
-git push -u origin main
-```
+---
 
-The first commit is already made. If you started from a downloaded copy instead, run `git init` and commit once before adding the remote.
+Data Management
 
-4. Open the **Actions** tab and wait for “Deploy Daybook to GitHub Pages” to finish. The app will be at `https://arushvarma.github.io/daybook/`.
+Application data is stored locally in the user's browser.
 
-If the first deploy fails because Pages is not enabled yet, enable it as in step 2 and re-run the workflow from the **Actions** tab.
+Users can:
 
-If your GitHub username is different, replace `arushvarma` in the links above and in `README.md`.
+- Export application data as JSON files.
+- Import previously exported JSON backups.
+- Restore their schedules and personal information when needed.
 
-## License
+Important: Data is not automatically synchronized between devices. Clearing browser storage may result in data loss if a backup is unavailable.
 
-[MIT](LICENSE) — use it, fork it, make it yours.
+---
+
+Security Considerations
+
+Daybook uses browser-based storage and does not currently implement user authentication or server-side access control.
+
+Security considerations include:
+
+- Validate imported JSON data before processing.
+- Escape user-provided content before displaying it as HTML.
+- Avoid storing passwords, API keys or sensitive information in LocalStorage.
+- Handle browser storage errors appropriately.
+- Restrict dynamically generated HTML to trusted or properly sanitized content.
+
+These practices help improve application reliability and reduce common client-side security risks.
+
+---
+
+Project Structure
+
+The current application uses a browser-based implementation.
+
+A possible modular structure for future development is:
+
+Daybook/
+│
+├── index.html
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── app.js
+│   ├── tasks.js
+│   ├── storage.js
+│   ├── calendar.js
+│   └── reminders.js
+│
+├── icons/
+├── manifest.webmanifest
+└── sw.js
+
+This is a proposed organization for future maintainability, not necessarily the current repository structure.
+
+---
+
+Installation
+
+1. Clone or download this repository.
+2. Open the project folder.
+3. Launch "index.html" in a browser.
+
+For offline functionality and Service Worker support, run the application through a local development server or a supported HTTPS hosting environment.
+
+---
+
+Development and Future Improvements
+
+Potential improvements include:
+
+- Cloud synchronization
+- User authentication
+- Backend API integration
+- Database integration
+- Advanced task analytics
+- Cross-device data synchronization
+- Improved backup and restoration
+- Automated testing
+- Modular frontend architecture
+
+These improvements can help evolve Daybook into a more scalable full-stack productivity application.
+
+---
+
+Project Goal
+
+To build a simple, accessible and efficient digital notebook for everyday planning and productivity.
+
+Daybook aims to make daily scheduling, task management and personal organization easier through a lightweight and user-friendly experience.
+
+---
+
+Project Releases
+
+Daybook is maintained as a single project with multiple releases.
+
+- Daybook v1.0: Initial release.
+- Daybook v2.0: Updated release with further improvements.
+
+Refer to the GitHub Releases section to access available versions.
+
+---
+
+License
+
+Specify the applicable license before distributing or reusing this project.
+
+---
+
+Developed as a personal productivity application project.
