@@ -1,11 +1,18 @@
-## AI-assisted development
-
-I created Daybook with help from AI tools. They assisted with [ writing code, design, or debugging — edit to match what happened]. I made the final decisions about the features and presentation.
-
 # Daybook
 
 **A calm, paper-like notebook for your week.** Plan your timetable, protect what matters, and let the day tick itself off.
 
+<p align="center">
+  <img src="docs/preview.png" alt="Daybook week view on desktop — a warm paper timetable with priorities highlighted" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://arushvarma.github.io/daybook/"><b>Open Daybook →</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/arushvarma/daybook/archive/refs/heads/main.zip">Download ZIP</a>
+  &nbsp;·&nbsp;
+  <a href="#install-it-as-an-app">Install as an app</a>
+</p>
 
 Daybook is a single-page app with no account, no server, and no build step. It opens like a notebook: a week spread, a page for each day, and a margin for what matters most. Everything you write stays in your browser.
 
@@ -21,6 +28,11 @@ Daybook is a single-page app with no account, no server, and no build step. It o
 - **Light & dark** — warm daylight paper, and a lamp-lit evening version.
 - **Yours to keep** — export/import as JSON. Data lives in `localStorage`; there is no tracking and no backend.
 
+<p align="center">
+  <img src="docs/preview-mobile.png" alt="Daybook day view on a phone" width="300">
+  &nbsp;&nbsp;
+  <img src="docs/preview-dark.png" alt="Daybook in dark mode" width="300">
+</p>
 
 ## Install it as an app
 
@@ -74,6 +86,7 @@ No npm, no bundler, no dependencies.
 - A sample student week is seeded on first run so the notebook isn’t empty. Clear it with the trash button when you’re ready for your own.
 - Export a JSON backup before switching browsers or clearing site data.
 - Reminders are on by default. The bell in the toolbar turns them off/on; browser notifications are requested only when you enable them.
+- Reminders are checked while Daybook is open. It does not schedule push notifications while the app is closed.
 
 ## Project structure
 
@@ -87,6 +100,10 @@ No npm, no bundler, no dependencies.
 ├── .github/workflows/pages.yml # deploy to GitHub Pages on every push
 └── LICENSE
 ```
+
+## AI-assisted development
+
+Daybook was created with help from AI tools, which contributed to parts of the design and code. The project is being developed as a portfolio piece, and its author is responsible for reviewing, understanding, and maintaining the work they present.
 
 ## Publishing this repo
 
