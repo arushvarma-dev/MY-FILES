@@ -1,7 +1,7 @@
 ## AI-assisted development
 
 I created Daybook with help from AI tools. They assisted with [planning, writing code, design, or debugging — edit to match what happened]. I made the final decisions about the features and presentation.
-[README.md](https://github.com/user-attachments/files/34928100/README.md)
+https://github.com/user-attachments/files/34928100/README.md)
 # Daybook
 
 **A calm, paper-like notebook for your week.** Plan your timetable, protect what matters, and let the day tick itself off.
