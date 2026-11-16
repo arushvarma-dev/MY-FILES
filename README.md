@@ -1,6 +1,6 @@
 ## AI-assisted development
 
-I created Daybook with help from AI tools. They assisted with [planning, writing code, design, or debugging — edit to match what happened]. I made the final decisions about the features and presentation.
+I created Daybook with help from AI tools. They assisted with [ writing code, design, or debugging — edit to match what happened]. I made the final decisions about the features and presentation.
 
 # Daybook
 
